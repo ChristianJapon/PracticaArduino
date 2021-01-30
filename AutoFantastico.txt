@@ -1,0 +1,46 @@
+int est//1. Generar un autofantastico que se prenda 
+//y se apague desde un pulsante.
+
+int estado=0;
+void setup(){
+
+pinMode(2, OUTPUT);
+pinMode(3, OUTPUT);
+pinMode(4, OUTPUT);
+pinMode(5, OUTPUT);
+ 
+pinMode(7,INPUT);
+
+
+}
+
+void loop(){
+
+  estado =digitalRead(7);
+//Si el pulsante es soltado
+//volvera al estado inicial
+//pero termianra la secuencia
+  if(estado == HIGH){
+  secuencia1();
+  secuencia2();
+  }
+  
+}
+//Secuencia para primer recorrido de encendido de luces
+void secuencia1(){
+  for(int i=2; i<6; i++){
+    digitalWrite(i, HIGH);
+    delay(400);
+    digitalWrite(i, LOW);
+  }  
+}
+//Secuencia para el recorrido de regreso de luces
+
+void secuencia2(){
+ for(int i=5; i>1; i--){
+    digitalWrite(i, HIGH);
+    delay(400);
+    digitalWrite(i, LOW);
+  }
+}
+

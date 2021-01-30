@@ -1,0 +1,16 @@
+int LED= 2;
+int LDR= A5;
+
+void setup(){
+ pinMode(LED, OUTPUT) ;
+}
+
+void loop(){
+  
+  if(analogRead(LDR) < 920){
+	digitalWrite(LED, HIGH);  
+  }else{
+digitalWrite(LED, LOW);  
+  }
+
+}
